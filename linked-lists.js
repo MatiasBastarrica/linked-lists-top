@@ -88,7 +88,7 @@ export class LinkedList {
     }
     let removedNode = this.headNode;
 
-    this.head = this.headNode.nextNode;
+    this.headNode = this.headNode.nextNode;
 
     return removedNode.value;
   }
@@ -116,7 +116,7 @@ export class LinkedList {
   }
 
   findIndex(value) {
-    if (!this.head) {
+    if (!this.headNode) {
       return -1;
     }
 
@@ -138,5 +138,22 @@ export class LinkedList {
     } else {
       return -1;
     }
+  }
+
+  toString() {
+    if (!this.headNode) {
+      return "";
+    }
+
+    let msg = "";
+    for (
+      let currentNode = this.headNode;
+      currentNode !== null;
+      currentNode = currentNode.nextNode
+    ) {
+      msg += `( ${currentNode.value} ) -> `;
+    }
+    msg += "null";
+    return msg;
   }
 }

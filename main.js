@@ -15,5 +15,7 @@ list.append("turtle");
 // console.log(list.tail());
 // console.log(list.at(30));
 // console.log(list.pop());
+// console.log(list);
 // console.log(list.contains("dog"));
-console.log(list.findIndex("fox"));
+// console.log(list.findIndex("fox"));
+console.log(list.toString());
