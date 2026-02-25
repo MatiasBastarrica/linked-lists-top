@@ -2,7 +2,7 @@ import { Node } from "./node.js";
 
 export class LinkedList {
   constructor() {
-    this.headNode = undefined;
+    this.headNode = null;
     this.tailNode = null;
   }
 
@@ -43,9 +43,17 @@ export class LinkedList {
 
   head() {
     if (!this.headNode) {
-      return this.headNode;
+      return undefined;
     } else {
       return this.headNode.value;
+    }
+  }
+
+  tail() {
+    if (!this.headNode) {
+      return undefined;
+    } else {
+      return this.tailNode.value;
     }
   }
 }
