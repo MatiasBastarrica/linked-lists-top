@@ -9,5 +9,6 @@ list.append("snake");
 list.append("turtle");
 
 // console.log(list);
-// console.log(list.head.nextNode.nextNode.nextNode.nextNode.nextNode);
-console.log(list.size());
+// console.log(list.headNode.nextNode.nextNode.nextNode.nextNode.nextNode);
+// console.log(list.size());
+// console.log(list);

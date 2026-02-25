@@ -2,36 +2,36 @@ import { Node } from "./node.js";
 
 export class LinkedList {
   constructor() {
-    this.head = null;
-    this.tail = null;
+    this.headNode = undefined;
+    this.tailNode = null;
   }
 
   append(value) {
-    if (!this.head) {
+    if (!this.headNode) {
       this.prepend(value);
-      this.tail = this.head;
+      this.tailNode = this.headNode;
     } else {
-      const prevNode = this.tail;
-      this.tail = new Node(value);
-      prevNode.nextNode = this.tail;
+      const prevNode = this.tailNode;
+      this.tailNode = new Node(value);
+      prevNode.nextNode = this.tailNode;
     }
   }
 
   prepend(value) {
-    const nextNode = this.head;
-    this.head = new Node(value, nextNode);
+    const nextNode = this.headNode;
+    this.headNode = new Node(value, nextNode);
   }
 
   size() {
-    if (!this.head) {
+    if (!this.headNode) {
       return 0;
-    } else if (!this.head.nextNode) {
+    } else if (!this.headNode.nextNode) {
       return 1;
     }
 
     let total = 1;
     for (
-      let currentNode = this.head;
+      let currentNode = this.headNode;
       currentNode.nextNode;
       currentNode = currentNode.nextNode
     ) {
@@ -39,5 +39,13 @@ export class LinkedList {
     }
 
     return total;
+  }
+
+  head() {
+    if (!this.headNode) {
+      return this.headNode;
+    } else {
+      return this.headNode.value;
+    }
   }
 }
