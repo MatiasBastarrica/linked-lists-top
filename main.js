@@ -21,4 +21,5 @@ list.append("turtle");
 // console.log(list.toString());
 
 // console.log(list.insertAt(2, "dog", "fox"));
+// console.log(list.removeAt(4));
 // console.log(list.toString());

@@ -187,4 +187,31 @@ export class LinkedList {
     node.nextNode = newList.headNode;
     newList.tailNode.nextNode = nextNode;
   }
+
+  removeAt(index) {
+    if (!this.headNode) {
+      return undefined;
+    } else if (index < 0) {
+      throw new RangeError("The index if out of bounds");
+    }
+
+    let currentIndex = 0;
+    let prevNode;
+    for (
+      let currentNode = this.headNode;
+      currentIndex <= index - 1;
+      currentNode = currentNode.nextNode
+    ) {
+      prevNode = currentNode;
+      currentIndex += 1;
+      if (currentNode == null) {
+        throw new RangeError("The index if out of bounds");
+      }
+    }
+
+    let removedNode = prevNode.nextNode;
+    let nextNode = removedNode.nextNode;
+
+    prevNode.nextNode = nextNode;
+  }
 }
