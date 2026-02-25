@@ -9,4 +9,9 @@ class LinkedList {
   append(value) {
     this.tail = new Node(value);
   }
+
+  prepend(value) {
+    const nextNode = this.head;
+    this.head = new Node(value, nextNode);
+  }
 }
