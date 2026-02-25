@@ -23,21 +23,21 @@ export class LinkedList {
   }
 
   size() {
-    let total = 0;
     if (!this.head) {
       return 0;
     } else if (!this.head.nextNode) {
       return 1;
     }
 
+    let total = 1;
     for (
       let currentNode = this.head;
-      this.head.nextNode;
-      currentNode = this.head.nextNode
+      currentNode.nextNode;
+      currentNode = currentNode.nextNode
     ) {
       total += 1;
     }
 
-    return size;
+    return total;
   }
 }
