@@ -5,4 +5,8 @@ class LinkedList {
     this.head = null;
     this.tail = null;
   }
+
+  append(value) {
+    this.tail = new Node(value);
+  }
 }
