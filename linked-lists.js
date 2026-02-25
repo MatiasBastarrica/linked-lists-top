@@ -9,6 +9,7 @@ export class LinkedList {
   append(value) {
     if (!this.head) {
       this.prepend(value);
+      this.tail = this.head;
     } else {
       const prevNode = this.tail;
       this.tail = new Node(value);
