@@ -56,4 +56,29 @@ export class LinkedList {
       return this.tailNode.value;
     }
   }
+
+  at(index) {
+    if (!this.headNode) {
+      return undefined;
+    }
+    let currentIndex = 0;
+    let node;
+    for (
+      let currentNode = this.headNode;
+      currentIndex <= index;
+      currentNode = currentNode.nextNode
+    ) {
+      currentIndex += 1;
+      node = currentNode;
+      if (currentNode == null) {
+        break;
+      }
+    }
+
+    if (node && node !== null) {
+      return node.value;
+    } else {
+      return undefined;
+    }
+  }
 }
