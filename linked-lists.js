@@ -81,4 +81,15 @@ export class LinkedList {
       return undefined;
     }
   }
+
+  pop() {
+    if (!this.headNode) {
+      return undefined;
+    }
+    let removedNode = this.headNode;
+
+    this.head = this.headNode.nextNode;
+
+    return removedNode.value;
+  }
 }
