@@ -114,4 +114,29 @@ export class LinkedList {
       return false;
     }
   }
+
+  findIndex(value) {
+    if (!this.head) {
+      return -1;
+    }
+
+    let index = 0;
+    let found = false;
+    for (
+      let currentNode = this.headNode;
+      currentNode !== null;
+      currentNode = currentNode.nextNode
+    ) {
+      if (currentNode.value === value) {
+        found = true;
+        break;
+      }
+      index += 1;
+    }
+    if (found) {
+      return index;
+    } else {
+      return -1;
+    }
+  }
 }
