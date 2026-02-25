@@ -1,4 +1,4 @@
-import { Node } from "./node";
+import { Node } from "./node.js";
 
 export class LinkedList {
   constructor() {
@@ -7,9 +7,13 @@ export class LinkedList {
   }
 
   append(value) {
-    const prevNode = this.tail;
-    this.tail = new Node(value);
-    prevNode.nextNode = this.tail;
+    if (!this.head) {
+      this.prepend(value);
+    } else {
+      const prevNode = this.tail;
+      this.tail = new Node(value);
+      prevNode.nextNode = this.tail;
+    }
   }
 
   prepend(value) {
