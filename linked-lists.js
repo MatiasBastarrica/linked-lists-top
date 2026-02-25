@@ -7,7 +7,9 @@ class LinkedList {
   }
 
   append(value) {
+    const prevNode = this.tail;
     this.tail = new Node(value);
+    prevNode.nextNode = this.tail;
   }
 
   prepend(value) {
